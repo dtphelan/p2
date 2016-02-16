@@ -14,6 +14,9 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 
     <link rel='stylesheet' href='css/main.css' type='text/css'>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
     <!-- Outside code: Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
@@ -49,31 +52,60 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 
     <div class='container'>
 
-        <h1>DWA-15 Project 2</h1>
+        <h1>PHPassword Generator</h1>
 
-        <div>
-            <?php echo $password; ?>
-            <!--<?php echo '<pre>'; ?>
-                <?php print_r($out); ?>
-            <?php echo '</pre>'; ?>-->
+        <div class='text-center'>
+            <p class='emphasis'><?php echo $password; ?></p>
         </div>
 
         <div>
-            Enjoy some options.<br>
             <form method='GET' action='index.php'>
-                <input type='number' name='words' value='<?php echo $words ?>'><label>How many words?</label><br>
-                <input type='checkbox' name='numbers' <?php echo $numberCheck ?>><label>Use numbers?</label><br>
-                <input type='checkbox' name='symbols' <?php echo $symbolCheck ?>><label>Use symbols?</label><br>
-                <input type='radio' name='capitalization' value='camelcase' <?php echo $camelCheck ?>><label>CamelCase</label><br>
-                <input type='radio' name='capitalization' value='lowercase' <?php echo $lowerCheck ?> ><label>lowercase</label><br>
-                <input type='radio' name='capitalization' value='uppercase' <?php echo $upperCheck ?>><label>UPPERCASE</label><br>
-                <input type='submit' value='Tell me a secret'><br>
+                <div class= 'col-sm-4 col-sm-offset-2 col-md-offset-3'>
+                    <label>
+                        <input type='number' name='words' value='<?php echo $words ?>' class='form-control'>
+                        How many words?
+                    </label>
+                    <div class='checkbox'>
+                    <label>
+                        <input type='checkbox' name='numbers' <?php echo $numberCheck ?> class='checkbox'>
+                        Add a number?
+                    </label>
+                    </div>
+                    <div class='checkbox'>
+                    <label>
+                        <input type='checkbox' name='symbols' <?php echo $symbolCheck ?> class='checkbox'>
+                        Add a symbol?
+                    </label>
+                    </div>
+                </div>
+                <div class='radio col-sm-4'>
+                    <label>
+                        <input id='radio1' type='radio' name='capitalization' value='camelcase' <?php echo $camelCheck ?> class='radio'>CamelCase
+                    </label><br>
+                    <label>
+                        <input id='radio2' type='radio' name='capitalization' value='lowercase' <?php echo $lowerCheck ?>  class='radio'>lowercase
+                    </label><br>
+                    <label>
+                        <input id='radio3' type='radio' name='capitalization' value='uppercase' <?php echo $upperCheck ?> class='radio'>UPPERCASE
+                    </label><br>
+                </div>
+                <div class='radio col-sm-4'>
+                    <label>
+                        <input type='radio' name='spacing' value='none' <?php echo $noSpacingCheck ?> class='radio'>No spacing
+                    </label><br>
+                    <label>
+                        <input type='radio' name='spacing' value='hyphenated' <?php echo $hyphenatedCheck ?> class='radio'>Hyphenate
+                    </label><br>
+                    <label>
+                        <input type='radio' name='spacing' value='spaces' <?php echo $spacesCheck ?> class='radio'>Spaces
+                    </label><br>
+                </div>
+                <div class='row col-xs-12 text-center'>
+                    <input class='btn btn-lg' type='submit' value='Get another password'><br>
+                </div>
             </form>
         </div>
     </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
 </body>
 </html>

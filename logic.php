@@ -1,24 +1,52 @@
 <?php
 
 # Define blank variables
+$words = '';
+$numbers = '';
+$symbols = '';
 $symbolCheck = '';
 $numberCheck = '';
-$capitalization = '';
 $camelCheck = '';
 $upperCheck = '';
 $lowerCheck = '';
+$capitalization = '';
 $password = '';
+$spacing = '';
+$hyphenatedCheck = '';
+$spacesCheck = '';
+$noSpacingCheck = '';
 
 # Put an empty value in $words, $symbols, and $variables so our page works before the GET call
-$words = isset($_GET['words']) ? $_GET['words'] : '';
-$symbols = isset($_GET['symbols']) ? $_GET['symbols'] : '';
-$numbers = isset($_GET['numbers']) ? $_GET['numbers'] : '';
-$capitalization = isset($_GET['capitalization']) ? $_GET['capitalization'] : '';
+if(isset($_GET['words'])) {
+    $words = $_GET['words'];
+}
+if(isset($_GET['symbols'])) {
+    $symbols = $_GET['symbols'];
+}
+if(isset($_GET['numbers'])) {
+    $numbers = $_GET['numbers'];
+}
+if(isset($_GET['capitalization'])) {
+    $capitalization = $_GET['capitalization'];
+}
+if(isset($_GET['spacing'])) {
+    $spacing = $_GET['spacing'];
+}
 
-# Set the default number of words to 4
+# Set defaults
 if($words == '') {
     $words = 4;
 }
+if($capitalization == '') {
+    $capitalization = 'camelcase';
+}
+if($spacing == '') {
+    $spacing = 'none';
+}
+if($noSpacingCheck == '') {
+    $noSpacingCheck = 'checked';
+}
+
 
 # Hard-coded list of words for minimum viable product
 # $randomWords = Array ('Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel', 'India', 'Juliet', 'Kilo', 'Lima', 'Mike', 'November', 'Oscar', 'Papa', 'Quebec', 'Romeo', 'Sierra', 'Tango', 'Uniform', 'Victor', 'Whiskey', 'Xray',  'Yankee', 'Zulu');
@@ -35,21 +63,18 @@ $html = $html . file_get_contents($chosenUrl);
 
 # Find everything between <li> and </li> on the chosen page, then put them in the $randomWords array
 preg_match_all('|<li>(.*?)</li>|s', $html, $out);
-$randomWords = $out[1];
+$randomWords = array_map('trim', $out[1]);
 
 $randomSymbols = Array ('!','@','#','$','%','^','&','*','~','?','+',':',';','<','>','{','}','.',',');
-
-# Working on implementing more customization options for users
-$hyphenated = 'no';
-$spaces = '';
 
 # Choose a word from the list, then concatenate it to $password
 for($i = 0; $i < $words; $i++) {
 
     $key = array_rand($randomWords);
     $chosenWord = $randomWords[$key];
+    $chosenWord = preg_replace('~\W~', '', $chosenWord);
 
-    # Capitalization options
+        # Capitalization options
     if($capitalization == 'lowercase') {
         $chosenWord = strtolower($chosenWord);
         $lowerCheck = 'checked';
@@ -62,15 +87,29 @@ for($i = 0; $i < $words; $i++) {
 
     if($capitalization == 'camelcase') {
         $chosenWord = ucwords($chosenWord);
-        $camelCheck = ' checked';
+        $camelCheck = 'checked';
     }
 
-    if($hyphenated == '') {
+    if($spacing == 'hyphenated') {
         $chosenWord = $chosenWord . '-';
+        $password = $password . $chosenWord;
+        $hyphenatedCheck = 'checked';
     }
 
-    $password = $password . $chosenWord;
+    elseif($spacing == 'spaces') {
+        $chosenWord = $chosenWord . ' ';
+        $password = $password. $chosenWord;
+        $spacesCheck = 'checked';
+    }
 
+    else {
+        $password = $password . $chosenWord;
+    }
+}
+
+# Remove trailing hyphen/space from password
+if($spacing == 'hyphenated' OR $spacing == 'spaces') {
+    $password = substr($password, 0, -1);
 }
 
 # Concatenate a number to $password
@@ -92,18 +131,18 @@ if($symbols == 'on') {
 }
 
 # Some words in the scraped list have symbols, so this removes them if the user doesn't want symbols
-if($symbolCheck !== 'checked') {
-
-    $password = preg_replace('~\W~', '', $password);
-
-}
+#if($symbolCheck !== 'checked' ) {
+#
+#    $chosenWord = preg_replace('~\W~', '', $chosenWord);
+#
+#}
 
 # Strip whitespace from the password, if the user doesn't want it
-if($spaces == ''){
-    $password = preg_replace('/\n/', '', $password);
-    $password = preg_replace('/\r/', '', $password);
-    $password = preg_replace('/\t+/', '', $password);
-}
+#if($spacing == ''){
+#    $password = preg_replace('/\n/', '', $password);
+#    $password = preg_replace('/\r/', '', $password);
+#    $password = preg_replace('/\t+/', '', $password);
+#}
 
 # Validate that the number of words is, in fact, a number
 if(is_numeric($words)) {
@@ -115,6 +154,11 @@ else {
 
     $password = 'Oh no! That\'s not what I was expecting. Try entering numbers (i.e. 4).';
 
+}
+
+# Max password length of 64
+if(strlen($password) >= 64) {
+    $password = 'That\'s one long password! Try asking for fewer words.';
 }
 
 ?>
