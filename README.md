@@ -1,10 +1,10 @@
 # DWA-15 Project 2
 
-[P2 for DWA-15](http://dwa15.com/Projects/P2). Currently a version that covers the project requirements, with more features/styling to come.
+[P2 for DWA-15](http://dwa15.com/Projects/P2). A PHP xkcd-style password generator.
 
 ## Project URL
 
-Go grade me over here: [p2.danielphelan.me](http://p2.danielphelan.me).
+Find the live version over here: [p2.danielphelan.me](http://p2.danielphelan.me).
 
 ## Outside code
 
