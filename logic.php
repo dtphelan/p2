@@ -70,9 +70,6 @@ elseif($capitalization !== 'camelcase' AND $capitalization !== 'uppercase' AND $
 
 else {
 
-    # Hard-coded list of words for minimum viable product
-    # $randomWords = Array ('Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel', 'India', 'Juliet', 'Kilo', 'Lima', 'Mike', 'November', 'Oscar', 'Papa', 'Quebec', 'Romeo', 'Sierra', 'Tango', 'Uniform', 'Victor', 'Whiskey', 'Xray',  'Yankee', 'Zulu');
-
     # Scraper function
     $html = '';
 
