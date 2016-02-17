@@ -107,7 +107,7 @@
             </div>
 
             <figure class='text-center col-md-6 col-sm-6'>
-                <img src='http://imgs.xkcd.com/comics/password_strength.png' class='img'></img>
+                <img src='http://imgs.xkcd.com/comics/password_strength.png' class='img'>
                 <figcaption><a href='https://xkcd.com/936/'>Comic courtesy of xkcd.</a>
             </figure>
         </div>
