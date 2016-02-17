@@ -42,6 +42,8 @@ a {
 
 .emphasis {
     font-family: Consolas, monaco, monospace;
+    word-wrap: break-word;
+    word-break: break-all;
     letter-spacing: 2px;
     display: inline-block;
 }

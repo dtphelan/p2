@@ -94,7 +94,7 @@
                         <input type='radio' name='spacing' value='spaces' <?php echo $spacesCheck ?> class='radio'>Spaces
                     </label><br>
                 </div>
-                <div class='row col-xs-12 text-center'>
+                <div class='row text-center'>
                     <input class='btn btn-lg' type='submit' value='Get another password'><br>
                 </div>
             </form>
