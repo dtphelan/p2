@@ -42,9 +42,9 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="http://p1.danielphelan.me">Project 1</a></li>
-            <li class="active"><a href="#">Project 2</a></li>
-            <li><a href="#">Project 3</a></li>
-            <li><a href="#">Project 4</a></li>
+            <li class="active"><a href="http://p2.danielphelan.me">Project 2</a></li>
+            <li><a href="http://p3.danielphelan.me">Project 3</a></li>
+            <li><a href="http://p4.danielphelan.me">Project 4</a></li>
           </ul>
         </div>
       </div>

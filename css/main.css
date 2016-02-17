@@ -35,6 +35,11 @@ a {
   margin: auto;
 }
 
+.profile {
+    width: 225px;
+    height: 225px;
+}
+
 .emphasis {
     letter-spacing: 2px;
     display: inline-block;
