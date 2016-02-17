@@ -17,6 +17,7 @@ The random words chosen are scraped from [Paul Noll's website](http://www.paulno
 - [x] Spacing options
 - [x] Set default capitalization
 - [x] All styling
+- [x] Fix/add validation for number, form inputs
 - [ ] Extra features, if inspiration strikes
 - [ ] Record demo
-- [ ] Make the purpose clear
+- [x] Make the purpose clear

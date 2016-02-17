@@ -44,5 +44,10 @@ a {
     font-family: Consolas, monaco, monospace;
     letter-spacing: 2px;
     display: inline-block;
+}
+
+.img {
+    width: 100%;
+    height: auto;
     padding: 5px 5px 5px 5px;
 }

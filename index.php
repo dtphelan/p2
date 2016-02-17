@@ -54,7 +54,19 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 
         <h1>PHPassword Generator</h1>
 
-        <div class='text-center'>
+        <div>
+            <div class='col-lg-4 col-lg-offset-2 col-sm-6'>
+                <p>Good old <a href='https://xkcd.com/'>xkcd.</a> A cartoon for the internet age, it has illustrated (literally) many Computer Science and Math concepts. One of its most widespread panels talks about password strength, encouraging users to adopt long, string-based passwords.</p>
+                <p>You can generate your own password below. Choose the number of words you want, the presence of numbers or symbols, capitalization, and spacing options.</p>
+            </div>
+
+            <div class='col-lg-4 col-sm-6'>
+                <img src='images/cartoon.png' class='img'></img>
+            </div>
+        </div>
+
+        <div class='text-center col-xs-12'>
+            <p>Get started with this one:</p>
             <p class='emphasis'><?php echo $password; ?></p>
         </div>
 
