@@ -7,7 +7,7 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 <html>
 <head>
 
-    <title>DWA-15 Project 2</title>
+    <title>Daniel Phelan - DWA-15 Project 2</title>
     <meta charset='utf-8'/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,25 +52,12 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 
     <div class='container'>
 
-        <h1>PHPassword Generator</h1>
-
-        <div>
-            <div class='col-lg-4 col-lg-offset-2 col-sm-6'>
-                <p>Good old <a href='https://xkcd.com/'>xkcd.</a> A cartoon for the internet age, it has illustrated (literally) many Computer Science and Math concepts. One of its most widespread panels talks about password strength, encouraging users to adopt long, string-based passwords.</p>
-                <p>You can generate your own password below. Choose the number of words you want, the presence of numbers or symbols, capitalization, and spacing options.</p>
-            </div>
-
-            <div class='col-lg-4 col-sm-6'>
-                <img src='images/cartoon.png' class='img'></img>
-            </div>
-        </div>
-
         <div class='text-center col-xs-12'>
-            <p>Get started with this one:</p>
+            <p>Get started with this password:</p>
             <p class='emphasis'><?php echo $password; ?></p>
         </div>
 
-        <div>
+        <div id='form'>
             <form method='GET' action='index.php'>
                 <div class= 'col-sm-4 col-sm-offset-2 col-md-offset-3'>
                     <label>
@@ -117,6 +104,19 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
                 </div>
             </form>
         </div>
+
+        <div>
+            <div class='col-md-4 col-sm-5 col-sm-offset-1'>
+                <p>Good old <a href='https://xkcd.com/'>xkcd.</a> A cartoon for the internet age, it has illustrated (literally) many Computer Science and Math concepts. One of its most widespread panels talks about password strength, encouraging users to adopt long, string-based passwords.</p>
+                <p>You can generate your own xkcd password above. Choose the number of words you want, the presence of numbers or symbols, capitalization, and spacing options.</p>
+            </div>
+
+            <figure class='text-center col-md-6 col-sm-6'>
+                <img src='http://imgs.xkcd.com/comics/password_strength.png' class='img'></img>
+                <figcaption><a href='https://xkcd.com/936/'>Comic courtesy of xkcd.</a>
+            </figure>
+        </div>
+
     </div>
 
 </body>
