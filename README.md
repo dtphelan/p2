@@ -8,9 +8,11 @@ Find the live version over here: [p2.danielphelan.me](http://p2.danielphelan.me)
 
 ## Outside code
 
-[Bootstrap](https://getbootstrap.com/) styles the day.
+[Bootstrap](https://getbootstrap.com/) is used for styling.
 
 The random words chosen are scraped from [Paul Noll's website](http://www.paulnoll.com/Books/Clear-English/). I tried to limit the loading time by only choosing one random page to scrape, but it may still slow the page load.
+
+Comic panel [courtesy of xkcd](https://xkcd.com/936/).
 
 ## To Do
 
