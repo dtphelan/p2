@@ -1,18 +1,23 @@
 # DWA-15 Project 2
 
-[P2 for DWA-15](http://dwa15.com/Projects/P2). A PHP xkcd-style password generator.
+[P2 for DWA-15.](http://dwa15.com/Projects/P2) A PHP xkcd-style password generator.
 
 ## Project URL
 
-Find the live version over here: [p2.danielphelan.me](http://p2.danielphelan.me).
+Find the live version over here: [p2.danielphelan.me.](http://p2.danielphelan.me)
+
+
+## Demo video
+
+[View my walkthrough](http://screencast.com/t/INuOwOKmPS) of some of the most exciting coding features.
 
 ## Outside code
 
 [Bootstrap](https://getbootstrap.com/) is used for styling.
 
-The random words chosen are scraped from [Paul Noll's website](http://www.paulnoll.com/Books/Clear-English/). I tried to limit the loading time by only choosing one random page to scrape, but it may still slow the page load.
+The random words chosen are scraped from [Paul Noll's website.](http://www.paulnoll.com/Books/Clear-English/) I tried to limit the loading time by only choosing one random page to scrape, but it may still slow the page load.
 
-Comic panel [courtesy of xkcd](https://xkcd.com/936/).
+Comic panel [courtesy of xkcd.](https://xkcd.com/936/)
 
 ## To Do
 
@@ -21,5 +26,5 @@ Comic panel [courtesy of xkcd](https://xkcd.com/936/).
 - [x] All styling
 - [x] Fix/add validation for number, form inputs
 - [ ] Extra features, if inspiration strikes
-- [ ] Record demo
+- [x] Record demo
 - [x] Make the purpose clear
